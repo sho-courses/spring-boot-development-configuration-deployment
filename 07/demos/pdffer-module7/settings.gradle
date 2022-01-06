@@ -1,0 +1,5 @@
+rootProject.name = 'pdffer-main'
+
+include 'pdffer-core'
+include 'pdffer-template'
+include 'nekosoft-pdffer-templates'

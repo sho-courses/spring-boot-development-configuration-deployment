@@ -1,0 +1,23 @@
+plugins {
+	id 'org.springframework.boot' version '2.5.3'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'org.nekosoft.pdffer'
+version = '1.0.0-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation group: 'com.itextpdf', name: 'itext7-core', version: '7.1.16'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+}
+
+test {
+	useJUnitPlatform()
+}

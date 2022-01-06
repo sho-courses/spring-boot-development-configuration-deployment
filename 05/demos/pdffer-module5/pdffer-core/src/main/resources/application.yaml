@@ -1,0 +1,47 @@
+pdffer:
+  mailer:
+    send-from:
+      name: PDFfer
+      address: pdf@pdffer.domain
+    reply-to:
+      name: PDFfer Admin
+      address: admin@pdffer.domain
+    smtp:
+      host: in-v3.mailjet.com
+      port: 587
+      username: your-username
+      password: your-password
+      java-mail-properties:
+        mail.transport.protocol: "smtp"
+        mail.smtp.auth: "true"
+        mail.smtp.starttls.enable: "true"
+        mail.debug: "true"
+    controller:
+      base-uri: nekomailpdf
+      email-uri: mail
+  web:
+    controller:
+      base-uri: nekopdf
+      download-uri: download
+      save-uri: save
+management:
+  endpoint:
+    pdffer-web-controller-props:
+      enabled: true
+    pdffer-mailer-controller-props:
+      enabled: true
+    pdffer-mailer-props:
+      enabled: true
+    pdffer-template-registry:
+      enabled: true
+  endpoints:
+      web:
+        exposure:
+          include: >-
+            pdffer-web-controller-props, pdffer-mailer-controller-props, pdffer-mailer-props,
+            pdffer-template-registry, health, info, env, configprops
+      jmx:
+        exposure:
+          include: >-
+            pdffer-web-controller-props, pdffer-mailer-controller-props, pdffer-mailer-props,
+            pdffer-template-registry, health, info, env, configprops

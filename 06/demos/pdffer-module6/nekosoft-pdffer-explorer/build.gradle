@@ -1,0 +1,39 @@
+plugins {
+    id 'org.springframework.boot' version '2.5.4'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group = 'org.nekosoft.pdffer'
+version = '1.0.0-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation project(':pdffer-core')
+    implementation(project(':pdffer-core')) {
+        capabilities {
+            requireCapability('org.nekosoft.pdffer:pdffer-core-web')
+        }
+    }
+    implementation(project(':pdffer-core')) {
+        capabilities {
+            requireCapability('org.nekosoft.pdffer:pdffer-core-email')
+        }
+    }
+    implementation(project(':pdffer-core')) {
+        capabilities {
+            requireCapability('org.nekosoft.pdffer:pdffer-core-shell')
+        }
+    }
+    implementation project(':nekosoft-pdffer-templates')
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+}
+
+test {
+    useJUnitPlatform()
+}

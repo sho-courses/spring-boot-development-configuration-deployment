@@ -1,0 +1,22 @@
+plugins {
+	id 'java'
+}
+
+group = 'org.nekosoft.pdffer'
+version = '1.0.0-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation project(':pdffer-template')
+	implementation 'com.fasterxml.jackson.core:jackson-databind:2.5.3'
+	implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.12.4'
+	implementation group: 'com.itextpdf', name: 'itext7-core', version: '7.1.16'
+}
+
+test {
+	useJUnitPlatform()
+}

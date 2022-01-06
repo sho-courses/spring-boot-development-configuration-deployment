@@ -1,0 +1,24 @@
+plugins {
+	id 'org.springframework.boot' version '2.5.3'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'org.nekosoft.pdfgen'
+version = '1.0.0-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation project(':pdffer-core')
+	implementation project(':nekosoft-pdffer-templates')
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+}
+
+test {
+	useJUnitPlatform()
+}

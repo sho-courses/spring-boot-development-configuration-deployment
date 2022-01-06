@@ -1,0 +1,12 @@
+spring:
+  shell:
+    interactive:
+      enabled: false
+---
+spring:
+  config:
+    activate:
+      on-profile: "pdffer-shell"
+  shell:
+    interactive:
+      enabled: true

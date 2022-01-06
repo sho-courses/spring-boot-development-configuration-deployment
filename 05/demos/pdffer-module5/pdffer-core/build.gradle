@@ -1,0 +1,41 @@
+plugins {
+	id 'org.springframework.boot' version '2.5.3'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java-library'
+}
+
+group = 'org.nekosoft.pdffer'
+version = '1.0.0-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+java {
+	registerFeature('web') {
+		usingSourceSet(sourceSets.main)
+	}
+	registerFeature('email') {
+		usingSourceSet(sourceSets.main)
+	}
+}
+
+bootJar {
+	enabled = false
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	api(project(':pdffer-template'))
+	// ...
+	webApi 'org.springframework.boot:spring-boot-starter-web'
+	emailApi 'org.springframework.boot:spring-boot-starter-mail'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
+}
+
+test {
+	useJUnitPlatform()
+}

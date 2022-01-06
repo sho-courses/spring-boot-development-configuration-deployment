@@ -1,0 +1,13 @@
+${AnsiColor.BLUE}
+ #    #        ######  #####   #######                           /\     /\
+  #    #       #     # #    #  #       ###### ###### #####      {  `---'  }
+   #    #      #     # #     # #       #      #      #    #     {  O   O  }
+    #    #     ######  #     # #####   #####  #####  #    #     ~~>  V  <~~
+   #    #      #       #     # #       #      #      #####       \  \|/  /
+  #    #       #       #    #  #       #      #      #   #        `-----'
+ #    #        #       #####   #       #      ###### #    #       /     \
+${AnsiColor.DEFAULT}
+${AnsiColor.MAGENTA}${application.title}${AnsiColor.DEFAULT}
+Artifact Version: ${AnsiColor.YELLOW}${application.formatted-version}${AnsiColor.DEFAULT}
+Spring Boot Version: ${AnsiColor.YELLOW}${spring-boot.formatted-version}${AnsiColor.DEFAULT}
+${AnsiColor.DEFAULT}

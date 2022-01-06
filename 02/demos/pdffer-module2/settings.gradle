@@ -1,0 +1,5 @@
+rootProject.name = 'pdffer-main'
+
+include 'pdffer-core'
+include 'terminal-pdf-generator'
+include 'nekosoft-pdffer-explorer'
